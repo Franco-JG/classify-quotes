@@ -22,9 +22,5 @@ export const fetchTags = async (quote) => {
 		throw new Error("Error fetching tags");
 	}
 	const result = await response.json();
-
-	return result[0].slice(0, 5).map((tag) => tag.label);
-	// return result.slice(0, 5);
-	
-	
+	return result[0].slice(0,5)
 };
