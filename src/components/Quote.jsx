@@ -10,8 +10,16 @@ function Quote({ quote }) {
   useEffect(() => {
     const loadTags = async () => {
       try {
-        const tagList = await fetchTags(quote.quote);
-        setTags(tagList);
+        // Intentamos cargar los tags de la caché
+        const cachedTags = JSON.parse(localStorage.getItem("tagsCache")) || {};
+        if (cachedTags[quote.quote]) {
+          setTags(cachedTags[quote.quote]);
+        } else {
+          const tagList = await fetchTags(quote.quote);
+          setTags(tagList);
+          const updatedCache = { ...cachedTags, [quote.quote]: tagList };
+          localStorage.setItem("tagsCache", JSON.stringify(updatedCache));
+        }
       } catch (err) {
         setErrorTags(err.message);
       } finally {
@@ -21,7 +29,7 @@ function Quote({ quote }) {
 
     loadTags();
   }, [quote.quote]);
-  
+
   return (
     <article>
       <h2>{quote.author}</h2>
