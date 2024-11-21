@@ -1,0 +1,19 @@
+.tag-list {
+    display: flex; /* Dispone los elementos en línea horizontal */
+    gap: 8px; /* Espaciado entre los tags */
+    padding: 0; /* Elimina el padding del contenedor */
+    margin: 0; /* Elimina el margen del contenedor */
+    list-style: none; /* Elimina los puntos de la lista */
+  }
+  
+  .tag-item {
+    background-color: #007bff; /* Azul similar a un botón */
+    color: white; /* Texto blanco */
+    padding: 4px 8px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente */
+    text-align: center; /* Centrar texto */
+    cursor: default; /* No hace clic */
+    white-space: nowrap; /* Evita que los tags se dividan en varias líneas */
+  }
+  
