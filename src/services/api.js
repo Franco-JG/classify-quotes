@@ -1,5 +1,8 @@
+const QUOTE_API_URL = "https://api.breakingbadquotes.xyz/v1/quotes/5";
+const TAGS_API_URL = "https://api-inference.huggingface.co/models/SamLowe/roberta-base-go_emotions";
+
 export const fetchQuotes = async () => {
-	const response = await fetch("https://api.breakingbadquotes.xyz/v1/quotes/10");
+	const response = await fetch(QUOTE_API_URL);
 	if (!response.ok) {
 		throw new Error("Error fetching quotes");
 	}
@@ -8,7 +11,7 @@ export const fetchQuotes = async () => {
 
 export const fetchTags = async (quote) => {
 	const response = await fetch(
-		"https://api-inference.huggingface.co/models/SamLowe/roberta-base-go_emotions",
+		TAGS_API_URL,
 		{
 			headers: {
 				Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
@@ -19,12 +22,13 @@ export const fetchTags = async (quote) => {
 		}
 	);
 	if (!response.ok) {
-		throw new Error("Error fetching tags");
+		// throw new Error("Error fetching tags");
+		return [{
+			label: 'Error fetching tags',
+			score: 0
+		}]
 	}
 	const result = await response.json();
-
-	return result[0].slice(0, 5).map((tag) => tag.label);
-	// return result.slice(0, 5);
-	
-	
+	console.info('fetching tags')
+	return result[0].slice(0,5)
 };
