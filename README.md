@@ -7,7 +7,7 @@ Este proyecto utiliza el modelo [SamLowe/roberta-base-go_emotions](https://huggi
 ## 🚀 Funcionalidades
 
 - Obtiene citas aleatorias de *Breaking Bad*.
-- Analiza las emociones principales asociadas a cada cita utilizando el modelo **GoEmotions**.
+- Analiza las emociones principales asociadas a cada cita utilizando el modelo base de *RoBERTa*.
 - Muestra las citas junto con los 5 principales *tags* emocionales y sus respectivos autores.
 - Interfaz amigable con los *tags* estilizados como botones.
 
@@ -19,7 +19,33 @@ Este proyecto utiliza el modelo [SamLowe/roberta-base-go_emotions](https://huggi
 - **Estilizado**: CSS
 - **APIs**:
   - Citas: [Breaking Bad Quotes API](https://api.breakingbadquotes.xyz/v1/quotes/)
-  - Emociones: [GoEmotions en Hugging Face](https://huggingface.co/SamLowe/roberta-base-go_emotions)
+  - Modelo: [roberta-base-go_emotions en Hugging Face](https://huggingface.co/SamLowe/roberta-base-go_emotions)
+
+---
+
+## ⚙️ Configuración del entorno
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone <url-del-repo>
+   ```
+
+2. **Instala las dependencias**:
+   ```bash
+   bun install
+   ```
+
+3. **Configura la API Key de Hugging Face**:
+   - Crea un archivo `.env` en la raíz del proyecto.
+   - Agrega tu clave de API de Hugging Face:
+     ```plaintext
+     VITE_API_KEY=tu_clave_api
+     ```
+
+4. **Ejecuta el servidor de desarrollo**:
+   ```bash
+   bun dev
+   ```
 
 ---
 
@@ -30,6 +56,6 @@ Este proyecto utiliza el modelo [SamLowe/roberta-base-go_emotions](https://huggi
 3. Cada cita incluirá:
    - El nombre del autor.
    - La frase de la cita.
-   - Los 5 principales *tags* emocionales asociados.
+   - Los 5 principales *tags* emocionales asociados con su respectivo *score*.
 
 ---

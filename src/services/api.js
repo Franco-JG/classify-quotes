@@ -1,5 +1,5 @@
 export const fetchQuotes = async () => {
-	const response = await fetch("https://api.breakingbadquotes.xyz/v1/quotes/10");
+	const response = await fetch("https://api.breakingbadquotes.xyz/v1/quotes/5");
 	if (!response.ok) {
 		throw new Error("Error fetching quotes");
 	}
