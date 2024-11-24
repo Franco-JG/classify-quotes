@@ -2,13 +2,21 @@ import '../styles/TagList.css'
 
 function TagList({ tags }) {
   return (
-    <ul className="tag-list">
+    <div className="d-flex flex-wrap justify-content-start gap-2">
       {tags.map((tag, index) => (
-        <li key={index} className="tag-style tag-item">
-          {tag.label} - {tag.score.toFixed(3)}
-        </li>
+        <div 
+          key={index} 
+          className="d-flex border rounded-pill shadow-sm tag-item"
+        >
+          <div className="bg-primary text-white text-center px-2 py-1 small rounded-start tag-item">
+            {tag.label}
+          </div>
+          <div className="bg-light text-center px-2 py-1 small rounded-end tag-item">
+            {tag.score.toFixed(3)}
+          </div>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
 

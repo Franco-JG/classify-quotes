@@ -29,6 +29,5 @@ export const fetchTags = async (quote) => {
 		}]
 	}
 	const result = await response.json();
-	console.info('fetching tags')
 	return result[0].slice(0,5)
 };

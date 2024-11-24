@@ -1,34 +1,4 @@
-.tag-list {
-  display: flex; /* Dispone los elementos en línea horizontal */
-  flex-wrap: wrap;
-  gap: 8px; /* Espaciado entre los tags */
-  padding: 0; /* Elimina el padding del contenedor */
-  margin: 0; /* Elimina el margen del contenedor */
-  list-style: none; /* Elimina los puntos de la lista */
-}
-
-.tag-style {
-  background-color: #007bff; /* Azul similar a un botón */
-  color: white; /* Texto blanco */
-  padding: 4px 8px; /* Espaciado interno */
-  border-radius: 4px; /* Bordes redondeados */
-  font-size: 14px; /* Tamaño de fuente */
-  text-align: center; /* Centrar texto */
-  white-space: nowrap; /* Evita que se dividan en varias líneas */
-}
-
-.tag-item {
-  cursor: default; /* Sin efecto de clic */
-}
-
-.button-style {
-  cursor: pointer; /* Cursor de mano */
-  border: none; /* Sin borde */
-  transition: background-color 0.3s ease; /* Animación suave */
-  font-size: 1em;
-  padding: 0.7em;
-}
-
-.button-style:hover {
-  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+.tag-item:hover{
+  cursor: default; 
+  user-select: none;
 }

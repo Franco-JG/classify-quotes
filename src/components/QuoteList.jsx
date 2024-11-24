@@ -2,15 +2,16 @@ import Quote from "./Quote.jsx";
 
 function QuoteList({ quotes, tags }) {
   return (
-    <section>
+    <div className="row">
       {quotes.map((quote, index) => (
-        <Quote 
-          key={index} 
-          quote={quote}
-          tags={tags[quote.quote] || []}
-        />
+        <div key={index} className="col-md-12 mb-4">
+          <Quote 
+            quote={quote} 
+            tags={tags[quote.quote] || []} 
+          />
+        </div>
       ))}
-    </section>
+    </div>
   );
 }
 

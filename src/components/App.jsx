@@ -53,19 +53,20 @@ function App() {
     }
   };
 
-  if (loading) return <p>Loading quotes and tags...</p>;
-  if (error) return <p>Error: {error}</p>;
-  
+  if (loading) return <p className="text-primary">Loading quotes and tags...</p>;
+  if (error) return <p className="text-danger">Error: {error}</p>;
+
   return (
-    <>
-      <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+    <div className="container mt-4">
+      <header className="d-flex justify-content-between align-items-center mb-4">
         <h1>Breaking Bad Quotes</h1>
-        <button onClick={fetchAndCacheQuotes} className="tag-style button-style">
+        <button onClick={fetchAndCacheQuotes} className="btn btn-primary">
           Get New Quotes
         </button>
       </header>
-      <QuoteList quotes={quotes} tags={tags}/>
-    </>
+      <QuoteList quotes={quotes} tags={tags} />
+      
+    </div>
   );
 }
 
