@@ -13,6 +13,13 @@ Este proyecto utiliza el modelo [SamLowe/roberta-base-go_emotions](https://huggi
 
 ---
 
+Puede consultar el despliegue en: [Netlify](https://classify-quotes.netlify.app/)
+
+![quotes](https://github.com/user-attachments/assets/554a2e55-93ec-4733-9171-34f114469b62)
+
+
+---
+
 ## 🛠️ Tecnologías utilizadas
 
 - **Frontend**: React (Vite)
